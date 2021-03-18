@@ -1,12 +1,23 @@
 # TODO
-# Make sure currency1_amount > 0
+import csv
 
-#nested dictionaries of currency information
-currencies ={'GBP': {'code':'GBP', 'name':'pound', 'symbol':'£'},
-			'USD': {'code':'USD', 'name':'dollar', 'symbol':'$'},
-			'EUR': {'code':'EUR', 'name':'euro', 'symbol':'€'},
-			'RUB': {'code':'RUB', 'name':'ruble', 'symbol':'₽'}
-			}
+class currencies_class:
+	def __init__(self,code,name,symbol):
+		self.code = code
+		self.name = name
+		self.symbol = symbol
+	def say(self):
+		print(self.code)
+
+def read_currency_info():
+	currencies_list = []
+	with open('currency_info.csv', 'r') as csvfile:
+		reader = csv.reader(csvfile, delimiter=',')
+		for row in reader:
+			currency = currencies_class(row[0],row[1],row[2])
+			currencies_list.append(currency)
+	return currencies_list
+
 
 conversion_rates = {'GBP/USD':1.39, 'GBP/EUR':1.17, 'GBP/RUB':102.98, 'USD/EUR':0.84, 'USD/RUB':74.14, 'EUR/RUB': 88.27}
 
@@ -86,4 +97,6 @@ def currency_amount_input(currency1):
 			return currency_amount
 
 # Main Program
+currencies_list = read_currency_info()
+print(currencies_list)
 program_loop(currencies,conversion_rates)
