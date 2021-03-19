@@ -1,4 +1,11 @@
-GBP,pound,£
-USD,dollar,$
-EUR,euro,€
-RUB,ruble,₽
+GBP,Pound sterling,£
+USD,US Dollar,$
+EUR,Euro,€
+RUB,Ruble,₽
+JPY,Japansese yen,¥
+AUD,Australian dollar,AU$
+CAD,Canadian dollar,CA$
+CHF,Swiss Franc,Fr
+CNY,Chinese Renmimbi,元
+HKD,Hong Kong Dollar,HK$
+NZD,New Zealand dollar,NZ$
